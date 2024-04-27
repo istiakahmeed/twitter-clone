@@ -15,7 +15,7 @@ const postSchema = new Schema(
     },
     likes: [
       {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "User",
       },
     ],
@@ -26,7 +26,7 @@ const postSchema = new Schema(
           required: true,
         },
         user: {
-          type: mongoose.Schema.Types.ObjectId,
+          type: Schema.Types.ObjectId,
           ref: "User",
           required: true,
         },
@@ -36,6 +36,6 @@ const postSchema = new Schema(
   { timestamps: true }
 );
 
-const Post = model("post", postSchema);
+const Post = model("Post", postSchema);
 
 export default Post;

@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import express from "express";
 
 import authRoutes from "./routes/auth.routes.js";
+import postRoutes from "./routes/post.routes.js";
 import userRoutes from "./routes/user.routes.js";
 
 import connectMongoDB from "./db/connectMongoDB.js";
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/posts", postRoutes);
 
 app.listen(PORT, () => {
   console.log(`server listening on ${PORT}`);
